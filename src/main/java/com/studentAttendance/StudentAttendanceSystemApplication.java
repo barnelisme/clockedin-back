@@ -2,8 +2,6 @@ package com.studentAttendance;
 
 import java.sql.Date;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -156,11 +154,7 @@ public class StudentAttendanceSystemApplication {
 		//System.out.println(studentAttendanceRate);
 		StudentRecord studentRecord = new StudentRecord(faculty, department, subject, studentNumber, studentAttendanceRate);
 		
-        if (studentRecord != null) {
-            return ResponseEntity.ok(studentRecord);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
+        return ResponseEntity.ok(studentRecord);
 	}
 	 
 	@CrossOrigin("*")
