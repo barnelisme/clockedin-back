@@ -2,6 +2,7 @@ package com.studentAttendance;
 
 import java.sql.Date;
 
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +26,7 @@ import com.studentAttendance.formData.FormData;
 import com.studentAttendance.scanInRepository.ScanInRepository;
 import com.studentAttendance.studentRecord.StudentRecord;
 import com.studentAttendance.studentToDate.StudentToDate;
+import com.studentAttendance.subjectEntity.SubjectModel;
 import com.studentAttendance.subjectRepository.SubjectRepository;
 import com.studentAttendance.userEntity.User;
 import com.studentAttendance.userRepository.UserRepository;
@@ -70,18 +72,12 @@ public class StudentAttendanceSystemApplication {
 	};
 	
 	@CrossOrigin("*")
-	@GetMapping("/engineeringSubjects")
-	public int getEngineeringSubjects(){		
-		int engineeringSubjects = subjectRepository.countSubjectsByFacultyEngineering();
-		return engineeringSubjects;
+	@GetMapping("/globalParameter")
+	public List<SubjectModel> getGlobalParameter(){		
+		List<SubjectModel> globalParameter = subjectRepository.getParameter();
+		return globalParameter;
 	};
 	
-	@CrossOrigin("*")
-	@GetMapping("/ICTSubjects")
-	public int getICTSubjects(){		
-		int ICTSubjects = subjectRepository.countSubjectsByFacultyInformation();
-		return ICTSubjects; 
-	};
 	
 	@CrossOrigin("*")
 	@GetMapping("/attendeesNumber")

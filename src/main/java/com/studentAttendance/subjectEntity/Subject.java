@@ -16,17 +16,17 @@ public class Subject {
 	private String faculty;
 	private String semesterType;
 	
-	Subject(){
+	public Subject(){
 		
 	}
 	
-	Subject(String subjectCode, String faculty, String department){
+	public Subject(String subjectCode, String faculty, String department){
 		this.subjectCode = subjectCode;
 		this.faculty = faculty;
 		this.department = department;
 	}
 	
-	Subject(String subjectName, String subjectCode, String subjectCredit, 
+	public Subject(String subjectName, String subjectCode, String subjectCredit, 
 			String department, String faculty, String semesterType){
 		this.subjectName = subjectName;
 		this.subjectCode = subjectCode;
@@ -36,6 +36,7 @@ public class Subject {
 		this.semesterType = semesterType;
 		
 	}
+	
 	
 	public String getSubjectName() {
 		return subjectName;
